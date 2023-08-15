@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import Game3x3 from "./components/Game3x3/Game3x3";
+import WinnersHistory from "./components/WinnersHistory/WinnersHistory";
+import WinnerAllert from "./components/WinnerAllert/WinnerAllert";
+import { useSelector } from "react-redux";
+import { GameState } from "./store/interfaces/interfaces";
 
 function App() {
+  const selectGameWinner = (state: GameState) => state.winner;
+  const winner = useSelector(selectGameWinner);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {winner.winner != "" ? <WinnerAllert /> : ""}
+      <div className="mainContainer">
+        <Game3x3 />
+      </div>
+      <WinnersHistory />
     </div>
   );
 }

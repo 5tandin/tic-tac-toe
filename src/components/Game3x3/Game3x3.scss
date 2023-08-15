@@ -1,0 +1,39 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineCell {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineCell:not(:first-child) {
+  margin-top: 20px;
+}
+
+.lineButton {
+  width: 340px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttonReset {
+  width: 100px;
+  height: 40px;
+  border: 3px solid #999999;
+  color: #333333;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+}
+
+.buttonReset:hover {
+  background: #66666626;
+ }
